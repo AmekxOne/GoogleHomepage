@@ -5,7 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     grid-template-columns: 1fr;
-    grid-template-rows: 5vh 2fr .5fr 2fr 1fr;
+    grid-template-rows: 5vh 2fr .5fr 2fr .75fr;
     text-align: center;
 }
 
@@ -99,29 +99,126 @@
 }
 
 #languageBar{
-    background: red;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1em
+    grid-gap: 1em;
+
+    grid-template-areas:
+    'buttons1 buttons2'
+    'language language';
+}
+
+#buttonLeft{
+    background: #f8f9fa;
+    color: #3c4043;
+    grid-area: buttons1;
+    justify-self: end;
+
+    height: 2.5em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    border-radius: 4px;
 }
 
 
+#buttonRight{
+    background: #f8f9fa;
+    color: #3c4043;
+    grid-area: buttons2;
+    justify-self: start;
+
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+}
+
+#language{
+    grid-area: language;
+    align-self: start;
+    margin-top: -8em;
+}
+
+#footer{
+    background: #f2f2f2;
+    color: rgba(0,0,0,.54);
+    font-size: 13px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+#footer a{
+    color: rgba(0,0,0,.54);
+    text-decoration: #222;
+}
+
+#country{
+    align-self: end;
+    justify-self: start;
+    margin: 0 1em 1em 1em;
+}
+
+#bottomFooter{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+}
+
+#bottomFooterLeft, #bottomFooterRight{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+    margin: 1em 1em 1em 5em;
+    
+    align-items: end;
+    justify-items: start;
+    width: 70%;
+}
+
+
+
 @media only screen and (max-width:750px){
+    
     #navbarLeft div{
         width: 3.5em;
     }
     #navbarRight{
-        margin-left: 1.5em;
-        
+        margin-left: 1.5em;  
     }
     #navbarRight div{
         width: 3.5em;
     }
+
     #signin{
         height: 25px;
     }
+
     #test2{
         width: 400px;
+    }
+
+    #language{
+        margin-top: -6em;
+    }
+
+    #footer{
+        
+    }
+
+    #bottomFooter{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        
+        align-items: end;
+        justify-items: start;
+        text-align: center;
     }
 }
